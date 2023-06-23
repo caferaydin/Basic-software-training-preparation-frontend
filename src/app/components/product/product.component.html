@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+
+            <div class="mb-3">
+                <label for="filterText" class="form-label"></label>
+                <input type="text"  [(ngModel)]="filterText" class="form-control" name="filterText" aria-label="Search" id="filterText" placeholder="Ürün Ara">
+            </div>
+
+            <div *ngFor="let product of products | filterPipe:filterText" class="col-md-3">
+                <div class="card">
+                    <h5 class="card-title"> {{product.productName}} - {{product.id }}</h5>
+                    <div class="card-body">
+                        <p class="card-text">{{product.productDescription}}</p>
+                        <li> {{product.stock}} </li>
+                    </div>
+                    <button class="btn btn-primary">{{  product.price}}</button>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</div>

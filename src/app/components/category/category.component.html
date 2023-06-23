@@ -1,0 +1,18 @@
+<div class="card">
+  <div  routerLink="Products"  class="card-header">Kategoriler</div>
+  <div class="card-body">
+    <ul class="list-group">
+      
+      <li
+        (click)="setCurrentCategory(category)"
+        *ngFor="let category of categories"
+        [routerLink]="['/products/category/', category.id]"
+
+        [class]="getCurrentCategoryClass(category)"
+      >
+        {{ category.categoryName }}
+
+      </li>
+    </ul>
+  </div>
+</div>
