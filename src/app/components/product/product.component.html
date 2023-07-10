@@ -8,13 +8,14 @@
             </div>
 
             <div *ngFor="let product of products | filterPipe:filterText" class="col-md-3">
-                <div class="card">
-                    <h5 class="card-title"> {{product.productName}} - {{product.id }}</h5>
+                <div class="card mt-2 p-5">
+                    <h5 class="card-title"> {{product.productName | uppercase}} </h5>
                     <div class="card-body">
                         <p class="card-text">{{product.productDescription}}</p>
                         <li> {{product.stock}} </li>
                     </div>
                     <button class="btn btn-primary">{{  product.price}}</button>
+                    <button (click)="addToCart(product)" class="btn btn-success mt-2"> Sepete Ekle</button>
                 </div>
             </div>
             
